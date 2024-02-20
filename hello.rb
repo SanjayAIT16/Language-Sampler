@@ -1,2 +1,8 @@
 puts "Hello, world!"
 puts "Hello"
+puts "Hello, world!"
+puts "Hello"
+puts "Hello, world!"
+puts "Hello"
+puts "Hello, world!"
+puts "Hello"
