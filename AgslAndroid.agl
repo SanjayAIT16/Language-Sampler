@@ -1,0 +1,35 @@
+#version 450
+
+// Input attributes
+in vec4 inPosition;  // Vertex position
+in vec4 inColor;     // Vertex color
+
+// Output to fragment shader
+out vec4 fragColor;
+
+void main() {
+    fragColor = inColor; // Pass color to fragment shader
+    gl_Position = inPosition; // Set the position of the vertex
+}
+
+
+// Input from vertex shader
+in vec4 fragColor;
+
+// Output to the frame buffer
+out vec4 outColor;
+
+void main() {
+    outColor = fragColor;  // Output the color received from the vertex shader
+}
+
+uniform mat4 uModelViewProjection; // Uniform matrix for transformations
+
+in vec4 inPosition;  // Vertex position
+
+out vec4 fragPosition; // Pass position to fragment shader
+
+void main() {
+    fragPosition = inPosition;  // Pass the position to the fragment shader
+    gl_Position = uModelViewProjection * inPosition;  // Apply transformation
+}
